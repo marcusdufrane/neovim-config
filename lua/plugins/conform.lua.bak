@@ -1,0 +1,16 @@
+return {
+  "stevearc/conform.nvim",
+  opts = function(_, opts)
+    opts.formatters = opts.formatters or {}
+
+    -- Force conform to use your locally installed clang-format
+    opts.formatters["clang-format"] = vim.tbl_deep_extend("force", opts.formatters["clang_format"] or {}, {
+      command = "/usr/bin/clang-format",
+    })
+
+    -- Force conform to use your locally installed cmake-format
+    opts.formatters.cmake_format = vim.tbl_deep_extend("force", opts.formatters.cmake_format or {}, {
+      command = "/home/marcus/.local/bin/cmake-format",
+    })
+  end,
+}

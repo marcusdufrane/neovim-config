@@ -3,7 +3,7 @@ return {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
-        "neocmakelsp",
+        "cmake-language-server",
         "cmakelang",
       },
     },
